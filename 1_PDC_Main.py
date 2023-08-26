@@ -6,6 +6,7 @@
 import streamlit as st
 import json
 import os
+from PIL import Image
 
 # initialize page
 # menu_items = {}
@@ -28,6 +29,10 @@ st.write("This page will introduce you to the world of awesome, juicy and \
          and follow the instructions below to become a home oven pizzaiolo. \
          Enjoy!")
 
+logo = Image.open('logo.jpeg')
+
+st.sidebar.image(logo)
+
 dough_time = st.sidebar.select_slider(
     label="How much time till you want fire the oven?",
     options=["3 hours", "24 hours", "72 hours"],
@@ -37,6 +42,10 @@ yeast_type = st.sidebar.select_slider(
     label="Which kind of yeast will you use?",
     options=["Fresh yeast", "Dry yeast"],
     value="Fresh yeast")
+
+how_many = st.sidebar.number_input(
+    label="How much pizza do you want to make?",
+    min_value=1)
 
 
 dough_translate_dict = {"3 hours": "3h_dough",
@@ -55,15 +64,15 @@ dough_translate_dict = {"3 hours": "3h_dough",
 # =============================================================================
 
 st.metric(label="Flour",
-          value=str(dough_dict[dough_translate_dict[dough_time]]["Flour"])+" g")
+          value=str(dough_dict[dough_translate_dict[dough_time]]["Flour"]*how_many)+" g")
 st.metric(label="Water",
-          value=str(dough_dict[dough_translate_dict[dough_time]]["Water"])+" g")
+          value=str(dough_dict[dough_translate_dict[dough_time]]["Water"]*how_many)+" g")
 st.metric(label="Olive oil",
-          value=str(dough_dict[dough_translate_dict[dough_time]]["Olive oil"])+" table spoons")
+          value=str(dough_dict[dough_translate_dict[dough_time]]["Olive oil"]*how_many)+" table spoons")
 st.metric(label="Salt",
-          value=str(dough_dict[dough_translate_dict[dough_time]]["Salt"])+" g")
+          value=str(dough_dict[dough_translate_dict[dough_time]]["Salt"]*how_many)+" g")
 st.metric(label="Sugar",
-          value=str(dough_dict[dough_translate_dict[dough_time]]["Sugar"])+" g")
+          value=str(dough_dict[dough_translate_dict[dough_time]]["Sugar"]*how_many)+" g")
 st.metric(label=yeast_type,
-          value=str(dough_dict[dough_translate_dict[dough_time]][yeast_type])+" g")
+          value=str(dough_dict[dough_translate_dict[dough_time]][yeast_type]*how_many)+" g")
     
