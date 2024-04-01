@@ -69,14 +69,14 @@ salt_weight = round(dough_dict[translated_dough_time]["Salt"]*how_many, 1)
 yeast_weight = round(dough_dict[translated_dough_time][yeast_type]*how_many, 1)
 sugar_weight = round(dough_dict[translated_dough_time]["Sugar"]*how_many, 1)
 
-portion_weight = sum(
+portion_weight = int(round(sum(
     [flour_weight,
      water_weight,
      oil_weight,
      salt_weight,
      yeast_weight,
      sugar_weight]
-    ) / how_many
+    ) / how_many, 0))
 
 # round up sauce to always show a full can
 how_much_sauce = math.ceil(how_many/3)
