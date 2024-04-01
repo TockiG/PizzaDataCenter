@@ -1,6 +1,6 @@
 # PizzaDataCenter
 
-Welcome to the world of awesome, juicy, and friend-making homemade Italian pizza! This website is your gateway to becoming a home oven pizzaiolo. Just use the recipe calculator and follow the instructions below to create delicious homemade pizzas that will impress your friends and family. Enjoy!
+This page will introduce you to the world of awesome, juicy and friendmaking homemade italian pizza. Just use the recipe calculator and follow the instructions on the page below to become a home oven pizzaiolo. Enjoy!
 
 It is hosted via: [https://pizzadatacenter.streamlit.app/](https://pizzadatacenter.streamlit.app/)
 
