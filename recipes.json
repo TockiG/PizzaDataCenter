@@ -1,1 +1,68 @@
-{    "3h_dough":        {            "Flour": 150.0,            "Water": 75.0,            "Olive oil": 1.0,            "Salt": 6.0,            "Sugar": 1.0,            "Fresh yeast": 6.9,            "Dry yeast": 2.33        },      "24h_dough":        {            "Flour": 150.0,            "Water": 75.0,            "Olive oil": 0.33,            "Salt": 6.0,            "Sugar": 0.0,            "Fresh yeast": 1.0,            "Dry yeast": 0.33        },        "72h_dough":        {            "Flour": 160.0,            "Water": 100.0,            "Olive oil": 0.33,            "Salt": 5.0,            "Sugar": 0.0,            "Fresh yeast": 1.0,            "Dry yeast": 0.33        }}
+{
+    "3h_dough":
+        {
+            "Flour": 150.0,
+            "Water": 75.0,
+            "Olive oil": 1.0,
+            "Salt": 6.0,
+            "Sugar": 1.0,
+            "Fresh yeast": 6.9,
+            "Dry yeast": 2.33,
+            "Bulk time": "0 hours",
+            "Portion time cold": "0 hours",
+            "Portion time warm": "3 hours",
+            "Semola": 1
+        },  
+    "24h_dough":
+        {
+            "Flour": 166.6666,
+            "Water": 100.0,
+            "Olive oil": 0.33,
+            "Salt": 6.0,
+            "Sugar": 0.0,
+            "Fresh yeast": 1.0,
+            "Dry yeast": 0.33,
+            "Bulk time": "1 hours",
+            "Portion time cold": "20 hours",
+            "Portion time warm": "3 hours",
+            "Semola": 1
+        },    
+    "48h_dough":
+        {
+            "Flour": 166.6666,
+            "Water": 105.0,
+            "Olive oil": 0.33,
+            "Salt": 5.5,
+            "Sugar": 0.0,
+            "Fresh yeast": 0.9,
+            "Dry yeast": 0.33,
+            "Bulk time": "18 hours",
+            "Portion time cold": "27 hours",
+            "Portion time warm": "3 hours",
+            "Semola": 1
+        },
+    "72h_dough":
+        {
+            "Flour": 166.6666,
+            "Water": 105.0,
+            "Olive oil": 0.33,
+            "Salt": 5.0,
+            "Sugar": 0.0,
+            "Fresh yeast": 0.83,
+            "Dry yeast": 0.33,
+            "Bulk time": "24 hours",
+            "Portion time cold": "45 hours",
+            "Portion time warm": "3 hours",
+            "Semola": 1
+        },
+    "sauce":
+        {
+            "San Marzano Tomato": 1,
+            "Olive oil": 1.5,
+            "Basil": 1,
+            "Pepper": "a little",
+            "Salt": "a little",
+            "Sugar": "a little"
+        }
+    
+}
