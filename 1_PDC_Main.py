@@ -62,9 +62,9 @@ dough_translate_dict = {"3 hours": "3h_dough",
 translated_dough_time = dough_translate_dict[dough_time]
 
 # define translation to apply GUI input to recipes.json 
-dough_size_translate_dict = {"a bit smaller": "0.9",
-                             "normal": "1.0",
-                             "a bit larger": "1.05"
+dough_size_translate_dict = {"a bit smaller": 0.9,
+                             "normal": 1.0,
+                             "a bit larger": 1.05
                              }
 
 dough_size_factor = dough_size_translate_dict[dough_size]
@@ -87,6 +87,16 @@ portion_weight = round(sum(
      yeast_weight,
      sugar_weight]
     ) / how_many, 0)
+
+print(portion_weight)
+print(sum(
+    [flour_weight,
+     water_weight,
+     oil_weight,
+     salt_weight,
+     yeast_weight,
+     sugar_weight]
+    ))
 
 # round up sauce to always show a full can
 how_much_sauce = math.ceil(how_many/3)
