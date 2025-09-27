@@ -35,7 +35,6 @@ st.sidebar.write("72 hours has the best taste. 24 hours is also delicious and \
                  has the best effort-taste-ratio. 48 hours is something in \
                  between. <i>A very short one will be added soon.</i>", unsafe_allow_html=True)
 
-
 yeast_type = st.sidebar.select_slider(
     label="Which kind of yeast will you use?",
     options=["Fresh yeast", "Dry yeast"],
@@ -46,6 +45,11 @@ how_many = st.sidebar.number_input(
     label="How many pizza people will be there?",
     min_value=1)
 
+dough_size = st.sidebar.select_slider(
+    label="Define size of your Pizza.",
+    #options=["3 hours", "24 hours", "48 hours", "72 hours"],
+    options=["a bit smaller", "normal", "a bit larger"],
+    value="normal")
 
 # define translation to apply GUI input to recipes.json 
 dough_translate_dict = {"3 hours": "3h_dough",
@@ -57,24 +61,32 @@ dough_translate_dict = {"3 hours": "3h_dough",
 # choose dict from recipes.json
 translated_dough_time = dough_translate_dict[dough_time]
 
+# define translation to apply GUI input to recipes.json 
+dough_size_translate_dict = {"a bit smaller": "0.9",
+                             "normal": "1.0",
+                             "a bit larger": "1.05"
+                             }
+
+dough_size_factor = dough_size_translate_dict[dough_size]
+
 # define weight of ingrediences
-flour_weight = round(dough_dict[translated_dough_time]["Flour"]*how_many, 1)
-water_weight = round(dough_dict[translated_dough_time]["Water"]*how_many, 1)
-oil_spoons = round(dough_dict[translated_dough_time]["Olive oil"]*how_many, 1)
-oil_weight = round(oil_spoons*8*how_many, 1) #8 g/TS olive oil
-salt_weight = round(dough_dict[translated_dough_time]["Salt"]*how_many, 1)
-yeast_weight = round(dough_dict[translated_dough_time][yeast_type]*how_many, 1)
-sugar_weight = round(dough_dict[translated_dough_time]["Sugar"]*how_many, 1)
+flour_weight = round(dough_dict[translated_dough_time]["Flour"]*dough_size_factor*how_many, 1)
+water_weight = round(dough_dict[translated_dough_time]["Water"]*dough_size_factor*how_many, 1)
+oil_spoons = round(dough_dict[translated_dough_time]["Olive oil"]*dough_size_factor*how_many, 1)
+oil_weight = round(oil_spoons*8*dough_size_factor*how_many, 1) #8 g/TS olive oil
+salt_weight = round(dough_dict[translated_dough_time]["Salt"]*dough_size_factor*how_many, 1)
+yeast_weight = round(dough_dict[translated_dough_time][yeast_type]*dough_size_factor*how_many, 1)
+sugar_weight = round(dough_dict[translated_dough_time]["Sugar"]*dough_size_factor*how_many, 1)
 
 # calculate weight of one portion
-portion_weight = int(round(sum(
+portion_weight = round(sum(
     [flour_weight,
      water_weight,
      oil_weight,
      salt_weight,
      yeast_weight,
      sugar_weight]
-    ) / how_many, 0))
+    ) / how_many, 0)
 
 # round up sauce to always show a full can
 how_much_sauce = math.ceil(how_many/3)
