@@ -86,7 +86,7 @@ portion_weight = round(sum(
      salt_weight,
      yeast_weight,
      sugar_weight]
-    ) / how_many, 0)
+    ) / how_many, 1)
 
 st.write(portion_weight)
 st.write(sum(
