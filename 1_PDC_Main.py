@@ -88,8 +88,8 @@ portion_weight = round(sum(
      sugar_weight]
     ) / how_many, 0)
 
-print(portion_weight)
-print(sum(
+st.write(portion_weight)
+st.write(sum(
     [flour_weight,
      water_weight,
      oil_weight,
@@ -97,6 +97,12 @@ print(sum(
      yeast_weight,
      sugar_weight]
     ))
+st.write(flour_weight)
+st.write(water_weight)
+st.write(oil_weight)
+st.write(salt_weight)
+st.write(yeast_weight)
+st.write(sugar_weight)
 
 # round up sauce to always show a full can
 how_much_sauce = math.ceil(how_many/3)
